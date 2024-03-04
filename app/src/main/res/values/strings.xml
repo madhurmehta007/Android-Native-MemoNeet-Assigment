@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Android_Native_MemoNeet_Assigment</string>
+    <string name="app_name">Capsule-App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="questions_10">Questions: 10</string>
+    <string name="quiz_test">Quiz Test</string>
+    <string name="blood_notes">Blood, fluid that transports oxygen and nutrients to the cells and carries away carbon dioxide and other waste products. Technically, blood is a transport liquid pumped by the heart (or an equivalent structure) to all parts of the body, after which it is returned to the heart to repeat the process. Blood is both a tissue and a fluid. These cells are suspended in a liquid matrix (plasma), which makes the blood a fluid.</string>
 </resources>
