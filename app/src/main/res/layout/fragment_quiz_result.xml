@@ -1,76 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.card.MaterialCardView
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/quiz_results"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/blue"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+    >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score: "
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvScoreValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:elevation="4dp"
         app:cardCornerRadius="16dp"
-        android:layout_margin="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/yellow"
+            android:background="#FFF7B4"
             android:padding="16dp">
 
             <LinearLayout
                 android:id="@+id/linear_layout1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/linear_layout2"
-                android:layout_marginEnd="8dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/total_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Qns"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
                     android:layout_gravity="center"
-                    android:layout_marginTop="2dp" />
+                    android:layout_marginTop="2dp"
+                    android:text="Total Ques"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/total_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10"
-                    android:textSize="20sp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
-                    android:layout_gravity="center"/>
+                    android:text="10"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/correct_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
                     android:text="Correct Ans"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/correct_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
-                    android:textSize="20sp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
-                    android:layout_gravity="center"/>
+                    android:text="3"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -78,41 +125,41 @@
                 android:id="@+id/linear_layout2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="@id/linear_layout1"
-                app:layout_constraintStart_toEndOf="@+id/linear_layout1"
                 app:layout_constraintBottom_toBottomOf="@id/linear_layout1"
                 app:layout_constraintEnd_toStartOf="@+id/linear_layout3"
-                android:layout_marginEnd="8dp">
+                app:layout_constraintStart_toEndOf="@+id/linear_layout1"
+                app:layout_constraintTop_toTopOf="@id/linear_layout1">
 
                 <TextView
                     android:id="@+id/ans_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
                     android:text="Answered"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="2dp" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/answered_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5"
-                    android:textSize="20sp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
-                    android:layout_gravity="center"/>
+                    android:text="5"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/wrong_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
                     android:text="Wrong Ans"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="16dp" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/wrong_number"
@@ -129,51 +176,63 @@
                 android:id="@+id/linear_layout3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginRight="8dp"
                 android:gravity="center"
-                app:layout_constraintTop_toTopOf="@id/linear_layout2"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/linear_layout2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/linear_layout2">
+                app:layout_constraintTop_toTopOf="@id/linear_layout2">
 
                 <TextView
                     android:id="@+id/UnAns_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
                     android:text="Unanswered"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="2dp" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/unanswered_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
                     android:text="5"
-                    android:textSize="20sp"
-                    android:layout_marginTop="2dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/score_tv"
+                    android:id="@+id/tvAccuracy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Score"
+                    android:layout_marginTop="16dp"
+                    android:text="Accuracy"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="16dp" />
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/score_number"
+                    android:id="@+id/tvAccuracyValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30"
-                    android:textSize="20sp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
-                    android:layout_gravity="center"/>
+                    android:text="30"
+                    android:textSize="20sp" />
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEndCapsule"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/red"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="20dp"
+        android:text="End Capsule"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
